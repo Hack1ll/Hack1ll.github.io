@@ -36,7 +36,9 @@ plugins:
   - jekyll-feed
 category_dir: category/
 tag_dir: tag/
-
+exclude:
+  - public/css/syntax/README.md
+  - README.md
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
