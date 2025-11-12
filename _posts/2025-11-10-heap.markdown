@@ -4,7 +4,6 @@ title: heap
 date: 2025-11-10 22:51:00 +0900
 category: kernel
 ---
-![image.png](attachment:7c691edc-7d2e-43d7-9976-149653682c43:image.png)
 
 핵심은 **덤프 속 `0xffffffff81c38880`가 전역 `tty_operations`(대개 `ptm_unix98_ops`)의 “절대 주소”**이고,
 
