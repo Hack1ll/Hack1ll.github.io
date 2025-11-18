@@ -8,7 +8,9 @@ category: forensic
 **<$LofFile 정의>**   
     $Logfile은 파일 시스템의 저널링 기능을 위해 존재하는 파일이다.
     파일이나 디렉토리를 생성하거나, 수정하거나, 삭제하는 행위를 기록하는 파일이다.
+
 <br>
+
 **<저널링 파일 시스템>**   
     컴퓨터는 파일 및 디렉터리의 변경사항이 생기면 이를 파일시스템에 반영하기 위해 단계별 과정을 거친다. 단계별 과정을 거치는 과정에서 정전이나 시스템 충돌로 데이터가 중간에 오류가 발생할 수 있다. 이를 방지하기위해 변경사항을 "저널"이라는 데이터 구조에 미리 기록하는 것을 저널링 파일 시스템 이라고 한다.   
     <br>
@@ -18,10 +20,13 @@ category: forensic
 **<$LogFile 위치>**   
     [root]\$LogFile
     +[root]\$MFT(분석에 함께 사용됨)
+
 <br>
+
 **<$LogFile 분석>**   
     1. NTFS Log Tracker 에서 SQLite DB 생성
     2. DB Browser for SQLite 로 분석
+
 <br>
 
 **<$LogFile Event>**   
