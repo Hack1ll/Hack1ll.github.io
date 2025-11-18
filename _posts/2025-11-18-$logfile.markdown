@@ -1,7 +1,7 @@
 ---
 layout: post
 title: $logfile(작성중)
-date: 2025-11-18 18:33:00 +0900
+date: 2025-11-18 15:20:00 +0900
 category: forensic
 ---
 
@@ -14,15 +14,15 @@ category: forensic
     <br>
     충돌 발생 후 복구를 하기위해 파일시스템에서 저널을 읽고 파일시스템이 다시 일관성을 유지할 때까지 저널의 변경사항을 replay한다. 결과적으로 충동발생후에는 저널에 기록되어있어 변경사항이 업데이트 되거나 저널에 제대로 기록되지 않아 업데이트 되지 않는 두가지 경우로 나뉘어 진다.
 
-**<$LogFile 위치>**
+**<$LogFile 위치>**   
     [root]\$LogFile
     +[root]\$MFT(분석에 함께 사용됨)
 
-**<$LogFile 분석>**
+**<$LogFile 분석>**   
     1. NTFS Log Tracker 에서 SQLite DB 생성
     2. DB Browser for SQLite 로 분석
 
-**<$LogFile Event>**
+**<$LogFile Event>**   
     - File Creation : 파일 생성
     - File Deletion : 파일 삭제
     - Writing Content of Resident File : 파일 데이터 변경(700byte이하 파일)
