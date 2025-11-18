@@ -1,0 +1,35 @@
+---
+layout: post
+title: $logfile(작성중)
+date: 2025-11-18 18:33:00 +0900
+category: forensic
+---
+
+**<$LofFile 정의>**
+    $Logfile은 파일 시스템의 저널링 기능을 위해 존재하는 파일이다.
+    파일이나 디렉토리를 생성하거나, 수정하거나, 삭제하는 행위를 기록하는 파일이다.
+<br>
+**<저널링 파일 시스템>**
+    컴퓨터는 파일 및 디렉터리의 변경사항이 생기면 이를 파일시스템에 반영하기 위해 단계별 과정을 거친다. 단계별 과정을 거치는 과정에서 정전이나 시스템 충돌로 데이터가 중간에 오류가 발생할 수 있다. 이를 방지하기위해 변경사항을 "저널"이라는 데이터 구조에 미리 기록하는 것을 저널링 파일 시스템 이라고 한다.   
+    <br>
+    충돌 발생 후 복구를 하기위해 파일시스템에서 저널을 읽고 파일시스템이 다시 일관성을 유지할 때까지 저널의 변경사항을 replay한다. 결과적으로 충동발생후에는 저널에 기록되어있어 변경사항이 업데이트 되거나 저널에 제대로 기록되지 않아 업데이트 되지 않는 두가지 경우로 나뉘어 진다.
+
+**<$LogFile 위치>**
+    [root]\$LogFile
+    +[root]\$MFT(분석에 함께 사용됨)
+
+**<$LogFile 분석>**
+    1. NTFS Log Tracker 에서 SQLite DB 생성
+    2. DB Browser for SQLite 로 분석
+
+**<$LogFile Event>**
+    - File Creation : 파일 생성
+    - File Deletion : 파일 삭제
+    - Writing Content of Resident File : 파일 데이터 변경(700byte이하 파일)
+    - Writing Content of Non-Resident File : 파일 데이터 변경(700byte 이상 파일)
+    - Renaming File : 파일 이름 변경
+    - Directory Creation : 디렉토리 생성
+    - Directory Deletion : 디렉토리 삭제
+---
+https://en.wikipedia.org/wiki/Journaling_file_system   
+https://learn.dreamhack.io/638#2
